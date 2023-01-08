@@ -1,0 +1,18 @@
+.contentBody {
+    margin: 10px 0px 0px 10px;
+}
+
+.contentImg img {
+    height: 180px;
+    width: 1050px;
+}
+
+.profile {
+    display: flex;
+}
+
+.profileImg img {
+    margin: 30px 50px 0px 0px;
+    max-width: 150px;
+}
+

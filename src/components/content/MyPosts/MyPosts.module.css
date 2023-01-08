@@ -1,0 +1,23 @@
+.posts {
+    margin: 50px 0px 0px 30px;
+}
+
+.postsForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.postInput {
+    min-width: 450px;
+    max-width: 100%;
+    min-height: 60px;
+    color: black;
+    background-color: rgb(88, 85, 85);
+}
+
+.sendPost {
+    width: 100px;
+    height: 40px;
+    margin: 10px 0px 0px 85%;
+    background-color: brown;
+}

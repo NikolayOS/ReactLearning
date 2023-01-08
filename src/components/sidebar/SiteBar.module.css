@@ -1,0 +1,18 @@
+.SiteBar {
+    background-color: aqua;
+    list-style-type: none;
+    padding: 20px 50px 0px 10px;
+    margin: 10px 0px 0px 0px;
+}
+
+.SiteBar li:last-child {
+    margin: 20px 0px 0px 0px;
+}
+
+.SiteBar button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+}
