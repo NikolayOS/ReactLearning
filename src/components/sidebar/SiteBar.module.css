@@ -16,3 +16,10 @@
     color: inherit;
     background-color: transparent;
 }
+.link{
+    color: blanchedalmond;
+}
+.active{
+    color: rgb(43, 226, 58);
+    text-decoration: dashed;
+}

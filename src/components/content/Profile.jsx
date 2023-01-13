@@ -1,6 +1,6 @@
-import styles from "./Content.module.css"
+import styles from "./Profile.module.css"
 import MyPosts from "./MyPosts/MyPosts";
-const Content = () => {
+const Profile = () => {
     return(
         <div className={styles.contentBody}>
             <div className={styles.contentImg}>
@@ -23,4 +23,4 @@ const Content = () => {
     )
 }
 
-export default Content;
+export default Profile;

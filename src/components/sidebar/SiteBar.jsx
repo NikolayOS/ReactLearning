@@ -1,12 +1,13 @@
+import { NavLink } from "react-router-dom";
 import styles from "./SiteBar.module.css"
 const SiteBar = () => {
     return(
         <ul className={styles.SiteBar}>
-            <li><a href="http://localhost:3000/">Profile</a></li>
-            <li><a href="http://localhost:3000/">Messages</a></li>
-            <li><a href="http://localhost:3000/">News</a></li>
-            <li><a href="http://localhost:3000/">Music</a></li>
-            <li><a href="http://localhost:3000/">Settings</a></li>
+            <li><NavLink to="/profile" className={styles.link}>Profile</NavLink></li>
+            <li><NavLink to="/messages" className={styles.link}>Messages</NavLink></li>
+            <li><NavLink to="/news" className={styles.link}>News</NavLink></li>
+            <li><NavLink to="/music" className={styles.link}>Music</NavLink></li>
+            <li><NavLink to="/settings" className={styles.link}>Settings</NavLink></li>
         </ul>
     )
 }
