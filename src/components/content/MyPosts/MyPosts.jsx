@@ -1,12 +1,8 @@
 import MyPost from "./MyPost/MyPost";
 import styles from "./MyPosts.module.css"
 
-const MyPosts = () => {
-        const postsData = [
-            {id: 1,post: "post1",likes: 33},
-            {id: 2,post: "post2",likes: 3},
-            {id: 3,post: "post3",likes: 55},
-        ];
+const MyPosts = (props) => {
+        const posts = props.posts.map((post,index) => <MyPost key ={index} message = {post.post} likes={post.likes}/>)
     return(
         <div className={styles.posts}>
         <div>My posts</div>
@@ -15,9 +11,7 @@ const MyPosts = () => {
                     <button className={styles.sendPost}>Send post</button>
             </form>
                 <div>
-                    <MyPost message = {postsData[0].post} likes={postsData[0].likes}/>
-                    <MyPost message = {postsData[1].post} likes={postsData[1].likes}/>
-                    <MyPost message = {postsData[2].post} likes={postsData[2].likes}/>
+                    {posts}
                 </div>
                     
                 

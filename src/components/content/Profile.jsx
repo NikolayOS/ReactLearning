@@ -1,6 +1,6 @@
 import styles from "./Profile.module.css"
 import MyPosts from "./MyPosts/MyPosts";
-const Profile = () => {
+const Profile = (props) => {
     return(
         <div className={styles.contentBody}>
             <div className={styles.contentImg}>
@@ -18,7 +18,7 @@ const Profile = () => {
                 <div>Web site: some@gmail.com</div>
             </div>
         </div>
-        <MyPosts/>
+        <MyPosts posts={props.posts}/>
         </div>
     )
 }

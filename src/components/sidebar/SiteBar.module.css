@@ -8,18 +8,3 @@
 .SiteBar li:last-child {
     margin: 20px 0px 0px 0px;
 }
-
-.SiteBar button {
-    padding: 0;
-    border: none;
-    font: inherit;
-    color: inherit;
-    background-color: transparent;
-}
-.link{
-    color: blanchedalmond;
-}
-.active{
-    color: rgb(43, 226, 58);
-    text-decoration: dashed;
-}
