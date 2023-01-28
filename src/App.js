@@ -13,10 +13,10 @@ function App(props) {
     <>
     <Header/>
     <div className="area">
-    <SiteBar/>
+    <SiteBar friends={props.state.friendsList}/>
     <Routes>
-    <Route path="profile" element = {<Profile posts={props.state.posts}/>}/>
-    <Route path="messages" element = {<Dialogs dialogs={props.state.dialogs} messages={props.state.messages}/>}/>
+    <Route path="profile" element = {<Profile posts={props.state.profilePage} dispatch={props.dispatch}/>}/>
+    <Route path="messages" element = {<Dialogs dialogs={props.state.messagesPage}/>}/>
     <Route path="news" element = {<News/>}/>
     <Route path="music" element = {<Music/>}/>
     <Route path="settings" element = {<Settings/>}/>

@@ -4,7 +4,7 @@
     justify-content: space-between;
     background-color: aqua;
     padding: 5px 0px 0px 5px;
-    
+    width: 100%;
     }
     .myHeaderLogoImg{
     max-width: 50px;

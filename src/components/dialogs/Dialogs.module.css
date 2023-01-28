@@ -1,6 +1,6 @@
 .messagesContainer{
     display: grid;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 4fr 7fr 7fr;
     width: 100%;
 }
 
@@ -8,11 +8,38 @@
     padding: 10px;
 }
 .dialog{
+    display: flex;
     color:rgb(42, 106, 165);
+    align-items: center;
 }
-.messages{
-    padding: 10px;
+.send{
+    color:rgb(200, 161, 109);
+}
+.receive{
+    color:rgb(46, 65, 141);
 }
 .message{
-    color:burlywood
+    padding: 10px;
+}
+
+.ava{
+    margin: 0px 5px 0px 0px;
+    max-width: 50px;
+}
+.addMessageArea{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    
+}
+.enterText{
+    color: blue;
+    border: 1px solid black;
+    min-height: 100px;
+    width: 350px;
+}
+.addMessage{
+    color: rgb(255, 0, 191);
 }

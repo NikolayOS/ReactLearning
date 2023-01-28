@@ -18,7 +18,7 @@ const Profile = (props) => {
                 <div>Web site: some@gmail.com</div>
             </div>
         </div>
-        <MyPosts posts={props.posts}/>
+        <MyPosts posts={props.posts} dispatch={props.dispatch}/>
         </div>
     )
 }
