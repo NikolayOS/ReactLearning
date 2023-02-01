@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import styles from "./Dialogs.module.css";
 import React from "react";
 import store from "../../state";
-import { addMessageActionCreator,changeInMessageActionCreator } from "../../state";
+import { addMessageActionCreator,changeInMessageActionCreator } from "../../reducers/dialogsReducer";
 
 const Dialogs = (props) => {
     const dialogs = props.dialogs.dialogs.map((dialog,index) =>  <DialogItem key ={index} ava={dialog.ava} name={dialog.name} id={dialog.id}/>);

@@ -2,7 +2,7 @@ import MyPost from "./MyPost/MyPost";
 import styles from "./MyPosts.module.css"
 import React from "react";
 import store from "../../../state";
-import { addPostActionCreator,changeInPostActionCreator } from "../../../state";
+import { addPostActionCreator,changeInPostActionCreator } from "../../../reducers/profileReducer";
 
 const MyPosts = (props) => {
         const posts = props.posts.posts.map((post,index) => 

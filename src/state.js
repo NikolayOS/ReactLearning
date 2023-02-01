@@ -1,8 +1,6 @@
-const ADD_POST = "ADD-POST";
-const ADD_MESSAGE = "ADD-MESSAGE";
-const CHANGE_IN_POST = "CHANGE-IN-POST";
-const CHANGE_IN_MESSAGE = "CHANGE-IN-MESSAGE";
-
+import dialogsReducer from "./reducers/dialogsReducer";
+import profileReducer from "./reducers/profileReducer";
+import sidebarReducer from "./reducers/sidebarReducer";
 
 let store = {
     _state: {
@@ -55,58 +53,11 @@ let store = {
         this._callSubscriber = observer;
     },
     dispatch(action) {
-        switch(action.type){
-            case ADD_POST:
-                let newPost = {
-                    id: this._state.profilePage.posts.length,
-                    post: this._state.profilePage.newPostText,
-                    likes: this._state.profilePage.newPostText.length,
-                    ava: "https://w7.pngwing.com/pngs/862/646/png-transparent-beard-hipster-male-man-avatars-xmas-giveaway-icon-thumbnail.png"
-                }
-                this._state.profilePage.posts.push(newPost);
-                this._state.profilePage.newPostText = "";
-                this._callSubscriber(this._state)
-                break;
-            case ADD_MESSAGE:
-                let newMessage = {
-                    id: this._state.messagesPage.messagesSend.length,
-                    message:this._state.messagesPage.newMessageText
-                }
-                this._state.messagesPage.messagesSend.push(newMessage);
-                this._state.messagesPage.newMessageText = "";
-                this._callSubscriber(this._state);
-                break;
-            case CHANGE_IN_POST:
-                this._state.profilePage.newPostText = action.text;
-                this._callSubscriber(this._state);
-                break;
-            case CHANGE_IN_MESSAGE:
-                this._state.messagesPage.newMessageText = action.text;
-                this._callSubscriber(this._state);
-                break;
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage,action);
+        this._state.messagesPage = dialogsReducer(this._state.messagesPage,action);
+        this._state.friendsList = sidebarReducer(this._state.friendsList,action);
+        this._callSubscriber(this._state);
     }
 }
-export const addPostActionCreator = () => {
-    return {
-        type: ADD_POST
-    }
-}
-export const addMessageActionCreator = () => {
-    return {
-        type: ADD_MESSAGE
-    }
-}
-export const changeInPostActionCreator = (text) => {
-    return {
-        type: CHANGE_IN_POST,
-        text: text
-    }
-}
-export const changeInMessageActionCreator = (text) => {
-    return {
-        type: CHANGE_IN_MESSAGE,
-        text: text
-    }
-}
+
 export default store;
