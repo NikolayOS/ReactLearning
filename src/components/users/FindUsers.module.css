@@ -1,0 +1,72 @@
+.wrap{
+    width: 1000px;
+}
+.title{
+    padding: 0px 0px 0px 80px;
+    margin: 10px 0px;
+}
+.container{
+    padding: 0px 0px 0px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.pages{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+}
+.page{
+    text-align: center;
+    min-width: 20px;
+    border: 1px solid blue;
+    background-color: darkgrey;
+    cursor: pointer;
+}
+.currentPage{
+    background-color: cadetblue;
+    text-align: center;
+    min-width: 20px;
+    border: 1px solid blue;
+    cursor: pointer;
+}
+.userElement{
+    display: flex;
+    margin: 10px 0px;
+}
+.userElementLeftSide{
+    margin: 10px 20px;
+    width: 70px;
+}
+.userAva{
+    width: 50px;
+}
+.userAva img{
+    width: 100%;
+    border-radius: 50%;
+}
+.followButton{
+    background-color: aqua;
+    color: white;
+}
+
+.userElementRightSide{
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 0px 20px;
+    padding: 10px;
+}
+.userInfo{
+    display: flex;
+    justify-content: space-around;
+}
+.userName{
+margin: 0px 200px 0px 0px;
+}
+.userLocation{
+
+}
+.userText{
+    margin: 20px 0px 0px 0px;
+    max-width: 400px;
+}

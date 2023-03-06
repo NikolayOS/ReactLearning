@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import Friends from "../friends/Friends";
+import FriendsContainer from "../friends/FriendsContainer";
 import styles from "./SiteBar.module.css"
 const SiteBar = (props) => {
     let activeStyle = {
@@ -18,8 +18,9 @@ const SiteBar = (props) => {
             <li><NavLink to="/news" style={({ isActive }) =>isActive ? activeStyle : unActiveStyle}>News</NavLink></li>
             <li><NavLink to="/music" style={({ isActive }) =>isActive ? activeStyle : unActiveStyle}>Music</NavLink></li>
             <li><NavLink to="/settings" style={({ isActive }) =>isActive ? activeStyle : unActiveStyle}>Settings</NavLink></li>
+            <li><NavLink to="/users" style={({ isActive }) =>isActive ? activeStyle : unActiveStyle}>Find Users</NavLink></li>
         </ul>
-        <Friends friends={props.friends.friends}/>
+        <FriendsContainer/>
         </div>
     )
 }

@@ -1,20 +1,18 @@
 import MyPost from "./MyPost/MyPost";
 import styles from "./MyPosts.module.css"
 import React from "react";
-import store from "../../../state";
-import { addPostActionCreator,changeInPostActionCreator } from "../../../reducers/profileReducer";
 
 const MyPosts = (props) => {
-        const posts = props.posts.posts.map((post,index) => 
+        const posts = props.posts.map((post,index) => 
         <MyPost key ={index} message = {post.post} likes={post.likes} ava={post.ava}/>)
         const newPostElement = React.createRef();
-        const newTextInPost = props.posts.newPostText;
+        const newTextInPost = props.newPostText;
         const addPostItem = () => {
-            store.dispatch(addPostActionCreator());
+            props.addPostItem();
         }
         function changeInPosts(){
             let text = newPostElement.current.value;
-            props.dispatch(changeInPostActionCreator(text));
+            props.changeInPost(text);
         }
     return(
         <div className={styles.posts}>

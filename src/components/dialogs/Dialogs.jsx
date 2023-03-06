@@ -1,21 +1,20 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Dialogs.module.css";
 import React from "react";
-import store from "../../state";
-import { addMessageActionCreator,changeInMessageActionCreator } from "../../reducers/dialogsReducer";
+
 
 const Dialogs = (props) => {
-    const dialogs = props.dialogs.dialogs.map((dialog,index) =>  <DialogItem key ={index} ava={dialog.ava} name={dialog.name} id={dialog.id}/>);
-    const send = props.dialogs.messagesSend.map((message,index) =>  <Message key ={index} message={message.message}/>);
-    const receive = props.dialogs.messagesReceive.map((message,index) =>  <Message key ={index} message={message.message}/>);
-    const newTextInMessage = props.dialogs.newMessageText;
+    const dialogs = props.messagesPage.dialogs.map((dialog,index) =>  <DialogItem key ={index} ava={dialog.ava} name={dialog.name} id={dialog.id}/>);
+    const send = props.messagesPage.messagesSend.map((message,index) =>  <Message key ={index} message={message.message}/>);
+    const receive = props.messagesPage.messagesReceive.map((message,index) =>  <Message key ={index} message={message.message}/>);
+    const newTextInMessage = props.messagesPage.newMessageText;
     const refMessage = React.createRef();
     const addMessages = () => {
-        store.dispatch(addMessageActionCreator());
+        props.addMessage();
     }
     function onMessageChange(){
         let textMessage = refMessage.current.value;
-        store.dispatch(changeInMessageActionCreator(textMessage))
+        props.changeInMessage(textMessage);
     }
 return (
     <div className={styles.messagesContainer}>
