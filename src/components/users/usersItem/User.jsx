@@ -1,6 +1,7 @@
 import styles from "../FindUsers.module.css"
 import usersPhoto from "../../../imgForProject/usersPhoto.jpg"
 import React from "react"
+import { NavLink } from "react-router-dom"
 
 class User extends React.Component {
     
@@ -9,7 +10,9 @@ class User extends React.Component {
         <div className={styles.userElement}>
         <div className={styles.userElementLeftSide}>
         <div className={styles.userAva}>
+            <NavLink to={"/profile/" + this.props.id}>
             <img src={this.props.photos.small ? this.props.photos.small : usersPhoto} alt=""/>
+            </NavLink>
         </div>
         { this.props.followed ? <button onClick={()=>{this.props.unfollow(this.props.id)}} className={styles.followButton}>UnFollow</button> 
         : 
